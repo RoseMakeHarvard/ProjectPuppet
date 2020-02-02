@@ -11,6 +11,7 @@ import numpy as np
 import cv2
 import pipeline
 import itertools
+from threading import Thread
 
 PLATFORM_LIST = [(0, HEIGHT - 40, WIDTH, 40)]
 
@@ -39,6 +40,10 @@ class Game:
             p = Platform(*plat)
             self.platforms.add(p)
             self.players.add(Player(self))
+        # self.gameThread.start()
+        # self.imageThread.start()
+        # Thread(target=self.run, args=()).start()
+        Thread(target=self.imageProcess, args=()).start()
         self.run()
 
     def update_platforms(self, rel_plat_coords=[]):
@@ -61,16 +66,15 @@ class Game:
         self.playing = True
         while self.playing:
             self.clock.tick(FPS)
+            self.events()
+            self.update()
+            self.draw()
+
+    def imageProcess(self):
+        self.playing = True
+        while(self.playing):
             ret, frame = self.cap.read()
             self.g.process(frame)
-            self.platX = []
-            self.playY = []
-            self.platH = []
-            self.platW = []
-            self.frameX = []
-            self.frameY = []
-            self.frameW = []
-            self.frameH = []
 
             self.detPlats = []
             # if not self.platsSeen >=18:
@@ -84,10 +88,6 @@ class Game:
                     self.frameSeen += 1
                     self.detFrame.append(cv2.boundingRect(self.g.find_contours_1_output[i]))
                     # self.frameX[i], self.frameY[i], self.frameW[i], self.frameH[i] = cv2.boundingRect(self.g.find_contours_1_output[i])
-
-            self.events()
-            self.update()
-            self.draw()
 
     def update(self):
         # Game Loop - Update
