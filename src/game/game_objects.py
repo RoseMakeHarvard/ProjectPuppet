@@ -1,6 +1,6 @@
 # Sprite classes for platform game
 import pygame as pg
-from src.game.settings import *
+from settings import *
 vec = pg.math.Vector2
 
 class Player(pg.sprite.Sprite):

@@ -5,8 +5,8 @@
 
 import pygame as pg
 import random
-from src.game.settings import *
-from src.game.game_objects import *
+from settings import *
+from game_objects import *
 
 PLATFORM_LIST = [(0, HEIGHT - 40, WIDTH, 40)]
 
