@@ -9,23 +9,23 @@
       <grip:Input step="0" socket="0"/>
       <grip:Input step="0" socket="1">
         <value>
-          <double>199.50539568345323</double>
-          <double>255.0</double>
+          <double>71.08812949640289</double>
+          <double>144.0358361774744</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="2">
         <value>
           <double>0.0</double>
-          <double>130.50505050505052</double>
+          <double>33.93508463474335</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="3">
         <value>
           <double>0.0</double>
-          <double>46.792929292929294</double>
+          <double>25.035250112041922</double>
         </value>
       </grip:Input>
-      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="CV erode">
       <grip:Input step="1" socket="0"/>
@@ -64,23 +64,23 @@
       <grip:Input step="4" socket="0"/>
       <grip:Input step="4" socket="1">
         <value>
-          <double>217.85071942446044</double>
-          <double>255.0</double>
+          <double>87.85071942446044</double>
+          <double>235.0</double>
         </value>
       </grip:Input>
       <grip:Input step="4" socket="2">
         <value>
-          <double>211.79856115107913</double>
-          <double>255.0</double>
+          <double>71.79856115107913</double>
+          <double>135.0</double>
         </value>
       </grip:Input>
       <grip:Input step="4" socket="3">
         <value>
-          <double>240.14388489208633</double>
+          <double>120.14388489208633</double>
           <double>255.0</double>
         </value>
       </grip:Input>
-      <grip:Output step="4" socket="0" previewed="false"/>
+      <grip:Output step="4" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="CV erode">
       <grip:Input step="5" socket="0"/>
@@ -118,20 +118,28 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="4" socket="0" previewed="false"/>
-      <grip:Input step="5" socket="0"/>
+      <grip:Output step="5" socket="0" previewed="false"/>
+      <grip:Input step="6" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output source="0" socket="0" previewed="true"/>
       <grip:Input step="4" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="5" socket="0" previewed="false"/>
-      <grip:Input step="6" socket="0"/>
+      <grip:Output step="4" socket="0" previewed="true"/>
+      <grip:Input step="5" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="6" socket="0" previewed="false"/>
       <grip:Input step="7" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="2" socket="0" previewed="false"/>
+      <grip:Input step="3" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output source="0" socket="0" previewed="true"/>
@@ -140,14 +148,6 @@
     <grip:Connection>
       <grip:Output step="1" socket="0" previewed="false"/>
       <grip:Input step="2" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output step="2" socket="0" previewed="false"/>
-      <grip:Input step="3" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="false"/>
-      <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
@@ -160,11 +160,11 @@
     <deployJvmOptions>-Xmx50m -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryError -XX:MaxNewSize=16m</deployJvmOptions>
   </settings>
   <codeGenerationSettings>
-    <language>Java</language>
+    <language>Python</language>
     <className>GripPipeline</className>
     <implementWpilibPipeline>false</implementWpilibPipeline>
-    <saveDir>C:\Users\desaiaj\GRIP</saveDir>
+    <saveDir>C:\Users\desaiaj\PycharmProjects\ProjectPuppet\src\game</saveDir>
     <packageName></packageName>
-    <moduleName>grip</moduleName>
+    <moduleName>pipeline</moduleName>
   </codeGenerationSettings>
 </grip:Pipeline>

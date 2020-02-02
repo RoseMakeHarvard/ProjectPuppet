@@ -12,9 +12,9 @@ class GripPipeline:
         """initializes all values to presets or None if need to be set
         """
 
-        self.__rgb_threshold_0_red = [199.50539568345323, 255.0]
-        self.__rgb_threshold_0_green = [0.0, 130.50505050505052]
-        self.__rgb_threshold_0_blue = [0.0, 46.792929292929294]
+        self.__rgb_threshold_0_red = [71.08812949640289, 144.0358361774744]
+        self.__rgb_threshold_0_green = [0.0, 33.93508463474335]
+        self.__rgb_threshold_0_blue = [0.0, 25.035250112041922]
 
         self.rgb_threshold_0_output = None
 
@@ -42,9 +42,9 @@ class GripPipeline:
         self.find_contours_0_output = None
 
 
-        self.__rgb_threshold_1_red = [217.85071942446044, 255.0]
-        self.__rgb_threshold_1_green = [211.79856115107913, 255.0]
-        self.__rgb_threshold_1_blue = [240.14388489208633, 255.0]
+        self.__rgb_threshold_1_red = [87.85071942446044, 235.0]
+        self.__rgb_threshold_1_green = [71.79856115107913, 135.0]
+        self.__rgb_threshold_1_blue = [120.14388489208633, 255.0]
 
         self.rgb_threshold_1_output = None
 
@@ -79,6 +79,7 @@ class GripPipeline:
         # Step RGB_Threshold0:
         self.__rgb_threshold_0_input = source0
         (self.rgb_threshold_0_output) = self.__rgb_threshold(self.__rgb_threshold_0_input, self.__rgb_threshold_0_red, self.__rgb_threshold_0_green, self.__rgb_threshold_0_blue)
+        # cv2.imshow('frame',self.rgb_threshold_0_output)
 
         # Step CV_erode0:
         self.__cv_erode_0_src = self.rgb_threshold_0_output
@@ -95,6 +96,7 @@ class GripPipeline:
         # Step RGB_Threshold1:
         self.__rgb_threshold_1_input = source0
         (self.rgb_threshold_1_output) = self.__rgb_threshold(self.__rgb_threshold_1_input, self.__rgb_threshold_1_red, self.__rgb_threshold_1_green, self.__rgb_threshold_1_blue)
+        # cv2.imshow('frame', self.rgb_threshold_1_output)
 
         # Step CV_erode1:
         self.__cv_erode_1_src = self.rgb_threshold_1_output
@@ -107,8 +109,6 @@ class GripPipeline:
         # Step Find_Contours1:
         self.__find_contours_1_input = self.cv_dilate_1_output
         (self.find_contours_1_output) = self.__find_contours(self.__find_contours_1_input, self.__find_contours_1_external_only)
-
-
 
 
     @staticmethod
