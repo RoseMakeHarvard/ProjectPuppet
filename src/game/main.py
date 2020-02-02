@@ -15,7 +15,7 @@ class Game:
         # initialize game window, etc
         pg.init()
         pg.mixer.init()
-        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
+        self.screen = pg.display.set_mode((WIDTH, HEIGHT),pg.FULLSCREEN)
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.running = True
@@ -34,7 +34,10 @@ class Game:
         self.platforms = pg.sprite.Group()
         self.platforms.add(Platform(*BASE_PLATFORM))
         for coord in rel_plat_coords:
-            p = Platform(coord[0] * WIDTH, coord[1] * HEIGHT, BLOCK_SIZE, BLOCK_SIZE)
+            p = Platform(coord[0] * WIDTH,
+                         coord[1] * HEIGHT,
+                         coord[2] * WIDTH,
+                         coord[3] * HEIGHT)
             self.platforms.add(p)
         self.platforms.update()
 
@@ -52,7 +55,7 @@ class Game:
 
     def update(self):
         # Game Loop - Update
-        platform_coords = [[0.50, 0.50]]
+        platform_coords = [[0.301, 0.434, 80, 20]]
         self.update_platforms(platform_coords)
         self.update_players()
 
