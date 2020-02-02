@@ -1,21 +1,3 @@
-# game options/settings
-TITLE = "Jumpy!"
-WIDTH = 480
-HEIGHT = 600
-FPS = 60
-
-# Player properties
-PLAYER_ACC = 0.5
-PLAYER_FRICTION = -0.12
-PLAYER_GRAV = 0.8
-
-# Starting platforms
-PLATFORM_LIST = [(0, HEIGHT - 40, WIDTH, 40),
-                 (WIDTH / 2 - 50, HEIGHT * 3 / 4, 100, 20),
-                 (125, HEIGHT - 350, 100, 20),
-                 (350, 200, 100, 20),
-                 (175, 100, 50, 20)]
-
 # define colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -24,3 +6,26 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 LIGHTBLUE = (0, 155, 155)
+ORANGE = (100,55,0)
+PINK = (255, 20,147)
+DARK_PURPLE = (75,0,130)
+DARK_RED = (153, 51, 51)
+
+PLAYER_COLOR = ORANGE
+PLATFORM_COLOR = ORANGE
+BORDER_COLOR = DARK_RED
+BORDER_THICKNESS = 20
+BLOCK_SIZE = 10
+
+# game options/settings
+TITLE = "Jumpy!"
+WIDTH = 1280
+HEIGHT = 720
+FPS = 60
+
+# Player properties
+PLAYER_ACC = 0.5
+PLAYER_FRICTION = -0.12
+PLAYER_GRAV = 0.8
+
+BASE_PLATFORM = (0, HEIGHT - 40, WIDTH, 40)
